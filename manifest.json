@@ -1,0 +1,40 @@
+{
+	"manifest_version": 2,
+    "name": "PolicyReviewer",
+    "version": "1.1",
+	 "icons": {
+        "19"  : "img/Icon19x19.png",
+        "48"  : "img/Icon48x48.png",
+        "128" : "img/Icon128x128.png"
+    },
+    "description": "PolicyReviewer by PrivacyChoice",
+    "browser_action": {
+        "default_title" : "Policy Reviewer",
+		"default_icon" : "img/Icon48x48.png"
+	  },
+    "background": {
+		"scripts": ["js/jquery-1.8.2.min.js", "background.js"]
+	},
+    "content_scripts": [
+		{
+            "matches": [
+                "http://*/policyturk*",
+                "https://*/policyturk*"
+            ],
+			"all_frames": true,
+            "js": ["js/jquery-1.8.2.min.js", "csToolBar.js"],
+            "run_at" : "document_start"
+        },
+		{
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": ["js/jquery-1.8.2.min.js", "js/highlight.js", "csTab.js"],
+            "run_at" : "document_start"
+        }
+    ],
+
+    "permissions": ["tabs", "webRequest"]
+	
+}
