@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
     "name": "PolicyReviewer",
-    "version": "1.1",
+    "version": "1.2",
 	 "icons": {
         "19"  : "img/Icon19x19.png",
         "48"  : "img/Icon48x48.png",

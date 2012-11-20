@@ -29,8 +29,8 @@ var lso = fetchLSO();
 if( lso.useremail == undefined ) {
 	lso.useremail = '';
 }
-if( lso.confirmcode == undefined ) {
-	lso.confirmcode = createUUID();
+if( lso.installcode == undefined ) {
+	lso.installcode = createUUID();
 }
 setEntireLSO(lso);
 //=== init lso done ==============================
@@ -153,7 +153,7 @@ $(document).ready( function() {
 							data.domain = response.hostname;
 							data.url = response.url;		
 							data.useremail = fetchLSO().useremail;	
-							data.confirmcode = fetchLSO().confirmcode;						
+							data.installcode = fetchLSO().installcode;						
 							data.policy = policy;
 							
 							for( var n in request.data ){
